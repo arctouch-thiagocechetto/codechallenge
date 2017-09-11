@@ -1,5 +1,6 @@
 package com.foo.umbrella.preseter
 
+import com.foo.umbrella.R
 import com.foo.umbrella.data.ApiServicesProvider
 import com.foo.umbrella.data.model.WeatherData
 import rx.Subscription
@@ -18,6 +19,11 @@ class MainPresenter(private val apiServicesProvider: ApiServicesProvider) {
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe({ onSuccess(it.response().body()) }, { onError(it.localizedMessage) })
+  }
+
+  fun getTemperatureColor(temperatureFarenheit: String) = when {
+    temperatureFarenheit.toFloat() < 60 -> R.color.weather_cool
+    else -> R.color.weather_warm
   }
 
   fun destroy() = subscription?.unsubscribe()
