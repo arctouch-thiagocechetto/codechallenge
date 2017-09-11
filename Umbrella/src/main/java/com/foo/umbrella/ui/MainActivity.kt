@@ -7,6 +7,8 @@ import com.foo.umbrella.data.ApiServicesProvider
 import com.foo.umbrella.data.model.WeatherData
 import com.foo.umbrella.preseter.MainPresenter
 import com.foo.umbrella.showToast
+import kotlinx.android.synthetic.main.activity_main.city
+import kotlinx.android.synthetic.main.activity_main.temperature
 
 class MainActivity: AppCompatActivity() {
 
@@ -23,7 +25,10 @@ class MainActivity: AppCompatActivity() {
   }
 
   private fun updateUi(weatherData: WeatherData) {
-
+    with(weatherData.currentObservation) {
+      temperature.text = getString(R.string.temperature, tempCelsius)
+      city.text = displayLocation.fullName
+    }
   }
 
   private fun showMessage(message: String) = showToast(message)
