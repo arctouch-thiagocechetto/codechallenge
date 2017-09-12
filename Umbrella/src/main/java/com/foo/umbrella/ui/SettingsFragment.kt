@@ -34,14 +34,14 @@ class SettingsFragment: PreferenceFragment(), SharedPreferences.OnSharedPreferen
 
   override fun onStart() {
     super.onStart()
+    setUpPreferences(preferenceScreen)
+  }
 
-    for (i in 0 until preferenceScreen.preferenceCount) {
-      val preference = preferenceScreen.getPreference(i)
+  private fun setUpPreferences(preferenceGroup: PreferenceGroup) {
+    for (i in 0 until preferenceGroup.preferenceCount) {
+      val preference = preferenceGroup.getPreference(i)
       if (preference is PreferenceGroup) {
-        for (j in 0 until preference.preferenceCount) {
-          val singlePref = preference.getPreference(j)
-          updatePreference(singlePref.key)
-        }
+        setUpPreferences(preference)
       } else {
         updatePreference(preference.key)
       }

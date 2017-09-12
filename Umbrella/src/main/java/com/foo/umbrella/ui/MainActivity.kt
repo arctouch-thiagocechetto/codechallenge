@@ -10,9 +10,10 @@ import com.foo.umbrella.data.ApiServicesProvider
 import com.foo.umbrella.data.model.DailyForecast
 import com.foo.umbrella.data.model.ForecastCondition
 import com.foo.umbrella.data.model.WeatherData
-import com.foo.umbrella.launchActivity
+import com.foo.umbrella.util.launchActivity
 import com.foo.umbrella.preseter.MainPresenter
-import com.foo.umbrella.showToast
+import com.foo.umbrella.util.showToast
+import com.foo.umbrella.ui.adapter.DailyForecastAdapter
 import kotlinx.android.synthetic.main.activity_main.city
 import kotlinx.android.synthetic.main.activity_main.daysList
 import kotlinx.android.synthetic.main.activity_main.description

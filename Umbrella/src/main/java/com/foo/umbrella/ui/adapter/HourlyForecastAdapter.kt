@@ -10,7 +10,7 @@
  * the license agreement.
  */
 
-package com.foo.umbrella.ui
+package com.foo.umbrella.ui.adapter
 
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
@@ -20,7 +20,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.foo.umbrella.R
 import com.foo.umbrella.data.model.ForecastCondition
-import com.foo.umbrella.inflate
+import com.foo.umbrella.util.inflate
 import kotlinx.android.synthetic.main.hourly_item.view.hour
 import kotlinx.android.synthetic.main.hourly_item.view.icon
 import kotlinx.android.synthetic.main.hourly_item.view.temperature

@@ -1,4 +1,4 @@
-package com.foo.umbrella
+package com.foo.umbrella.util
 
 import android.app.Activity
 import android.content.Context

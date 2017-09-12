@@ -10,7 +10,7 @@
  * the license agreement.
  */
 
-package com.foo.umbrella.ui
+package com.foo.umbrella.ui.adapter
 
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -19,7 +19,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.foo.umbrella.R
 import com.foo.umbrella.data.model.DailyForecast
-import com.foo.umbrella.inflate
+import com.foo.umbrella.util.inflate
 import kotlinx.android.synthetic.main.day_forecast.view.hours
 import kotlinx.android.synthetic.main.day_forecast.view.title
 
