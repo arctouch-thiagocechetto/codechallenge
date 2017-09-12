@@ -25,8 +25,7 @@ import kotlinx.android.synthetic.main.hourly_item.view.hour
 import kotlinx.android.synthetic.main.hourly_item.view.icon
 import kotlinx.android.synthetic.main.hourly_item.view.temperature
 
-class HourlyForecastAdapter(
-): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HourlyForecastAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
   private var minTemperature: ForecastCondition? = null
   private var maxTemperature: ForecastCondition? = null
