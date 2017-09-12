@@ -9,20 +9,35 @@ import rx.schedulers.Schedulers
 
 class MainPresenter(private val apiServicesProvider: ApiServicesProvider) {
 
+  companion object {
+    private const val MAX_COOL_TEMPERATURE_FARENHEIT = 60
+  }
+
   private var subscription: Subscription? = null
 
   private val weatherService
     get() = apiServicesProvider.weatherService
 
-  fun fetchData(onSuccess: (WeatherData) -> Unit, onError: (String) -> Unit) {
-    subscription = weatherService.forecastForZipObservable("94107")
+  fun fetchData(zipCode: String, onSuccess: (WeatherData) -> Unit, onError: (String) -> Unit) {
+    subscription = weatherService.forecastForZipObservable(zipCode)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe({ onSuccess(it.response().body()) }, { onError(it.localizedMessage) })
+        .subscribe(
+            { result ->
+              if (result.isError) {
+                onError(result.error().localizedMessage)
+              } else {
+                onSuccess(result.response().body())
+              }
+            },
+            {
+              onError(it.localizedMessage)
+            }
+        )
   }
 
   fun getTemperatureColor(temperatureFarenheit: String) = when {
-    temperatureFarenheit.toFloat() < 60 -> R.color.weather_cool
+    temperatureFarenheit.toFloat() < MAX_COOL_TEMPERATURE_FARENHEIT -> R.color.weather_cool
     else -> R.color.weather_warm
   }
 
