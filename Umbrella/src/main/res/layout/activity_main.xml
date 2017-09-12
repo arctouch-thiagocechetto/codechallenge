@@ -34,8 +34,8 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/default_margin"
-      android:src="@drawable/ic_settings"
       android:contentDescription="@null"
+      android:src="@drawable/ic_settings"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toTopOf="parent"/>
 
@@ -52,18 +52,44 @@
       tools:text="11°"/>
 
     <TextView
+      android:id="@+id/description"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="@string/clear_button"
       android:textColor="@android:color/white"
       android:textSize="@dimen/clear_text_size"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/temperature"
-      app:layout_constraintVertical_bias="0.30"/>
+      app:layout_constraintTop_toBottomOf="@+id/temperature"
+      app:layout_constraintVertical_bias="0.3"
+      tools:text="Clear"/>
 
   </android.support.constraint.ConstraintLayout>
 
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <include layout="@layout/day_forecast"/>
+
+      <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="8dp"
+        android:elevation="@dimen/header_elevation"
+        card_view:cardCornerRadius="4dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="25dp">
+      </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+  </ScrollView>
 
 </LinearLayout>
