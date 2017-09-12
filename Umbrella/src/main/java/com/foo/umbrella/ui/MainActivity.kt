@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.foo.umbrella.R
 import com.foo.umbrella.data.ApiServicesProvider
 import com.foo.umbrella.data.model.DailyForecast
+import com.foo.umbrella.data.model.ForecastCondition
 import com.foo.umbrella.data.model.WeatherData
 import com.foo.umbrella.launchActivity
 import com.foo.umbrella.preseter.MainPresenter
@@ -18,6 +19,9 @@ import kotlinx.android.synthetic.main.activity_main.description
 import kotlinx.android.synthetic.main.activity_main.header
 import kotlinx.android.synthetic.main.activity_main.settings
 import kotlinx.android.synthetic.main.activity_main.temperature
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.format.TextStyle
+import java.util.Locale
 
 class MainActivity: AppCompatActivity() {
 
@@ -54,9 +58,18 @@ class MainActivity: AppCompatActivity() {
     with(daysList.adapter as DailyForecastAdapter) {
       forecasts = weatherData.forecast
           .groupBy { it.dateTime.dayOfYear }
-          .map { DailyForecast(it.key.toString(), it.value) }
+          .map { DailyForecast(getItemTitle(it.value.first()), it.value) }
       showCelsius = isCelsius
       notifyDataSetChanged()
+    }
+  }
+
+  private fun getItemTitle(forecastCondition: ForecastCondition): String {
+    val today = LocalDateTime.now().dayOfYear
+    return when (forecastCondition.dateTime.dayOfYear) {
+      today -> getString(R.string.today)
+      today + 1 -> getString(R.string.tomorrow)
+      else -> forecastCondition.dateTime.dayOfWeek.getDisplayName(TextStyle.FULL, Locale.getDefault())
     }
   }
 

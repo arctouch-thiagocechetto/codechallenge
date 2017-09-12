@@ -13,5 +13,8 @@
 
   <string name="default_zipcode">94107</string>
 
+  <string name="today">Today</string>
+  <string name="tomorrow">Tomorrow</string>
+
 
 </resources>
