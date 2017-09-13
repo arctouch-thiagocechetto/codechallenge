@@ -5,7 +5,7 @@
     <dimen name="header_elevation">8dp</dimen>
     <dimen name="header_height">180dp</dimen>
     <dimen name="city_text_size">20sp</dimen>
-    <dimen name="temperature_text_size">70sp</dimen>
+    <dimen name="temperature_text_size">56sp</dimen>
     <dimen name="clear_text_size">16sp</dimen>
 
     <dimen name="cell_text_size">14sp</dimen>

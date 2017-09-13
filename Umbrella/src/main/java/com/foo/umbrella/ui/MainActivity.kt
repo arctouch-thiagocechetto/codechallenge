@@ -50,7 +50,8 @@ class MainActivity: AppCompatActivity() {
     val isCelsius = unit.equals(getString(R.string.unit_celsius))
     with(weatherData.currentObservation) {
       val tempUnit = if (isCelsius) tempCelsius else tempFahrenheit
-      temperature.text = getString(R.string.temperature, tempUnit)
+      val tempRounded = Math.round(tempUnit.toFloat())
+      temperature.text = getString(R.string.temperature, tempRounded)
       city.text = displayLocation.fullName
       description.text = weatherDescription
       header.setBackgroundColor(getColorCompat(presenter.getTemperatureColor(tempFahrenheit)))

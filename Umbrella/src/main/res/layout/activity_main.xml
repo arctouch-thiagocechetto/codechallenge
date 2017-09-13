@@ -13,10 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/header_height"
     android:background="@color/weather_cool"
-    android:elevation="@dimen/header_elevation"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:elevation="@dimen/header_elevation">
 
     <TextView
       android:id="@+id/city"
