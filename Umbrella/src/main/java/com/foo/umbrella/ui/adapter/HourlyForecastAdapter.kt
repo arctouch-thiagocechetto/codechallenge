@@ -1,18 +1,5 @@
-/*
- * Copyright 2017 ArcTouch LLC.
- * All rights reserved.
- *
- * This file, its contents, concepts, methods, behavior, and operation
- * (collectively the "Software") are protected by trade secret, patent,
- * and copyright laws. The use of the Software is governed by a license
- * agreement. Disclosure of the Software to third parties, in any form,
- * in whole or in part, is expressly prohibited except as authorized by
- * the license agreement.
- */
-
 package com.foo.umbrella.ui.adapter
 
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.foo.umbrella.R
 import com.foo.umbrella.data.model.ForecastCondition
+import com.foo.umbrella.util.getColorCompat
 import com.foo.umbrella.util.inflate
 import kotlinx.android.synthetic.main.hourly_item.view.hour
 import kotlinx.android.synthetic.main.hourly_item.view.icon
@@ -60,7 +48,7 @@ class HourlyForecastAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   }
 
   private fun setItemColor(holder: RecyclerView.ViewHolder, colorResId: Int) = with(holder as ForecastHolder) {
-    var color = ContextCompat.getColor(iconImageView.context, colorResId)
+    var color = iconImageView.context.getColorCompat(colorResId)
     iconImageView.setColorFilter(color)
     timeLabel.setTextColor(color)
     temperatureLabel.setTextColor(color)

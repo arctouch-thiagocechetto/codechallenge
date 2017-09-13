@@ -19,11 +19,10 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:layout_margin="8dp"
+  android:background="@color/content_background"
+  android:layout_margin="@dimen/card_margin"
   android:elevation="@dimen/header_elevation"
-  app:cardCornerRadius="4dp"
-  tools:layout_editor_absoluteX="8dp"
-  tools:layout_editor_absoluteY="25dp"
+  app:cardCornerRadius="@dimen/card_corner_radius"
   tools:showIn="@layout/activity_main">
 
   <android.support.constraint.ConstraintLayout
@@ -36,6 +35,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="@dimen/default_margin"
+      android:textColor="@color/text_color_primary"
       android:textSize="@dimen/city_text_size"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintTop_toTopOf="parent"
@@ -46,7 +46,7 @@
       android:layout_width="0dp"
       android:layout_height="1dp"
       android:layout_margin="@dimen/default_margin"
-      android:background="#d7d7d7"
+      android:background="@color/forecast_card_divider"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/title"/>
@@ -55,11 +55,10 @@
       android:id="@+id/hours"
       android:layout_width="0dp"
       android:layout_height="match_parent"
-      android:layout_marginLeft="@dimen/default_margin"
+      android:layout_margin="@dimen/default_margin"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/line"
-      android:layout_marginStart="@dimen/default_margin"/>
+      app:layout_constraintTop_toBottomOf="@+id/line"/>
 
   </android.support.constraint.ConstraintLayout>
 

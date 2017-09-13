@@ -17,4 +17,9 @@
         <item name="android:windowDrawsSystemBarBackgrounds" tools:ignore="NewApi">true</item>
     </style>
 
+    <style name="forecast_cell">
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:textSize">@dimen/cell_text_size</item>
+      </style>
+
 </resources>

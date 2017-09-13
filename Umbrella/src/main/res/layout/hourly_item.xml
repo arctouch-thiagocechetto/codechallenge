@@ -15,12 +15,13 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginTop="@dimen/default_margin"
+              android:layout_marginTop="@dimen/grid_margin"
               android:gravity="center_horizontal"
               android:orientation="vertical">
 
   <TextView
     android:id="@+id/hour"
+    style="@style/forecast_cell"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:text="4:00 PM"/>
@@ -29,10 +30,12 @@
     android:id="@+id/icon"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/grid_icon_margin"
     tools:src="@drawable/weather_sunny"/>
 
   <TextView
     android:id="@+id/temperature"
+    style="@style/forecast_cell"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:text="7°"/>
