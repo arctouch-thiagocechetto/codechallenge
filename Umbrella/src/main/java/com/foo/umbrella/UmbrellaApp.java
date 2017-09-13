@@ -1,8 +1,8 @@
 package com.foo.umbrella;
 
-import android.app.Application;
-
 import com.jakewharton.threetenabp.AndroidThreeTen;
+
+import android.app.Application;
 
 public class UmbrellaApp extends Application {
   @Override public void onCreate() {

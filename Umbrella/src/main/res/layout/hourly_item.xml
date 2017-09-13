@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2017 ArcTouch LLC.
+  ~ All rights reserved.
+  ~
+  ~ This file, its contents, concepts, methods, behavior, and operation
+  ~ (collectively the "Software") are protected by trade secret, patent,
+  ~ and copyright laws. The use of the Software is governed by a license
+  ~ agreement. Disclosure of the Software to third parties, in any form,
+  ~ in whole or in part, is expressly prohibited except as authorized by
+  ~ the license agreement.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/grid_margin"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/hour"
+    style="@style/forecast_cell"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="4:00 PM"/>
+
+  <ImageView
+    android:id="@+id/icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/grid_icon_margin"
+    tools:src="@drawable/weather_sunny"/>
+
+  <TextView
+    android:id="@+id/temperature"
+    style="@style/forecast_cell"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="7°"/>
+</LinearLayout>
